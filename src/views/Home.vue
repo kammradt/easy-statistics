@@ -64,6 +64,7 @@
     }),
     created() {
       this.numbers = '10, 20, 50, 30, 30, 30'
+      document.title = this.$t('title')
     },
     methods: {
       copy(value) {
