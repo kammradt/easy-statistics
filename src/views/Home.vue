@@ -12,6 +12,9 @@
         <v-btn fab v-for="language in languages" :key="language.lang" v-text="language.emoji"
                @click="setLanguageTo(language.lang)" class="display-1"/>
       </v-speed-dial>
+      <v-btn text right icon large link target="_blank" href="https://github.com/kammradt/easy-statistics">
+        <v-icon v-text="'mdi-xml'"/>
+      </v-btn>
     </v-toolbar>
     <v-container grid-list-sm>
       <v-row justify="center">
