@@ -9,7 +9,8 @@
             <v-icon v-text="'mdi-earth'"/>
           </v-btn>
         </template>
-        <v-btn fab v-for="language in languages" :key="language.lang" v-text="language.emoji" @click="setLanguageTo(language.lang)"/>
+        <v-btn fab v-for="language in languages" :key="language.lang" v-text="language.emoji"
+               @click="setLanguageTo(language.lang)" class="display-1"/>
       </v-speed-dial>
     </v-toolbar>
     <v-container grid-list-sm>
