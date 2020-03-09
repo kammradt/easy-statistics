@@ -1,20 +1,20 @@
 <template>
   <div>
     <v-toolbar color="#F6F6F6">
-      <v-toolbar-title class="font-weight-light display-1" v-text="$t('title')"/>
+      <v-toolbar-title class="font-weight-light" v-text="$t('title')"/>
       <v-spacer/>
       <v-speed-dial direction="bottom">
         <template v-slot:activator>
-          <v-btn text right icon large>
+          <v-btn icon large>
             <v-icon v-text="'mdi-earth'"/>
           </v-btn>
         </template>
         <v-btn fab v-for="language in languages" :key="language.lang" v-text="language.emoji"
                @click="setLanguageTo(language.lang)" class="display-1"/>
+        <v-btn fab link target="_blank" href="https://github.com/kammradt/easy-statistics">
+          <v-icon v-text="'mdi-xml'"/>
+        </v-btn>
       </v-speed-dial>
-      <v-btn text right icon large link target="_blank" href="https://github.com/kammradt/easy-statistics">
-        <v-icon v-text="'mdi-xml'"/>
-      </v-btn>
     </v-toolbar>
     <v-container grid-list-sm>
       <v-row justify="center">
@@ -39,14 +39,14 @@
                   <v-card @click="({})" v-text="ordered" outlined tile class="text-wrap text-center"/>
                 </v-col>
 
-                <v-col v-for="(result, operation) in report" :key="operation" cols="6" @click="copy(result)">
+                <v-col v-for="(result, operation) in report" :key="operation" @click="copy(result)">
                   <v-btn block tile outlined v-text="$t(`report.${operation}`)"/>
                   <v-btn block tile outlined text v-text="result"/>
                 </v-col>
 
               </v-row>
-              <span v-text="$t('future')" />
-              <a href='https://github.com/kammradt/easy-statistics' target='_blank' v-text="$t('future_link')" />
+              <span v-text="$t('future')"/>
+              <a href='https://github.com/kammradt/easy-statistics' target='_blank' v-text="$t('future_link')"/>
             </v-card-text>
           </v-card>
         </v-col>
