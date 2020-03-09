@@ -3,7 +3,6 @@ import {sort} from "mathjs";
 
 function generateReport(listOfNumbers) {
   return {
-    ordered: order(listOfNumbers),
     mean: getMean(listOfNumbers),
     median: getMedian(listOfNumbers),
     mode: getMode(listOfNumbers),

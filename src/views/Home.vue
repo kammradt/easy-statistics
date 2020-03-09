@@ -31,14 +31,16 @@
             </div>
             <v-card-text>
               <v-row>
-                <v-col @click="copy(result)" v-for="(result, operation) in report" :key="operation" cols="12">
-                  <v-btn block tile outlined v-text="$t(`report.${operation}`)"/>
-
-                  <v-card v-if="operation === 'ordered'"
-                          @click="({})" v-text="result"
-                          outlined tile class="text-wrap text-center"/>
-                  <v-btn v-else block tile outlined text v-text="result"/>
+                <v-col @click="copy(ordered)" cols="12">
+                  <v-btn block tile outlined v-text="$t(`report.ordered`)"/>
+                  <v-card @click="({})" v-text="ordered" outlined tile class="text-wrap text-center"/>
                 </v-col>
+
+                <v-col v-for="(result, operation) in report" :key="operation" cols="6" @click="copy(result)">
+                  <v-btn block tile outlined v-text="$t(`report.${operation}`)"/>
+                  <v-btn block tile outlined text v-text="result"/>
+                </v-col>
+
               </v-row>
             </v-card-text>
           </v-card>
@@ -50,7 +52,7 @@
 </template>
 
 <script>
-  import {filter, generateReport} from "../services/statistics";
+  import {filter, generateReport, order} from "../services/statistics";
 
   export default {
     name: "Home",
@@ -81,6 +83,9 @@
       },
       report() {
         return generateReport(this.listOfNumbers);
+      },
+      ordered() {
+        return order(this.listOfNumbers)
       }
     }
   };
