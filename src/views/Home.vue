@@ -22,7 +22,7 @@
                   class="my-6 font-weight-light title"
                   :label="$t('input.label')"
                   v-model="numbers"
-                  clearable
+                  clearable @click:clear="onErase"
           />
           <v-card tile>
             <div class="text-center pt-3">
@@ -75,6 +75,10 @@
       setLanguageTo(language) {
         this.$i18n.locale = language
         document.title = this.$t('title')
+      },
+      onErase() {
+        this.numbers = '1, 2, 3'
+        setTimeout(() => this.numbers = '', 50)
       }
     },
     computed: {
