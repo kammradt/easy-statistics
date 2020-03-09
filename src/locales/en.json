@@ -17,7 +17,7 @@
     "median":  "Median",
     "mode": "Mode",
     "range":  "Range",
-    "standart_deviation": "Standart Deviation",
+    "standard_deviation": "Standard Deviation",
     "variance":  "Variance"
   },
   "future": "Yes, I will add more stuff such as options for non discret intervals and dynamic classes. You can help me ",

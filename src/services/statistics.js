@@ -1,4 +1,4 @@
-import {getMean, getMedian, getMode, getRange, getStandartDeviation, getVariance,} from "./statistics-helper";
+import {getMean, getMedian, getMode, getRange, getStandardDeviation, getVariance,} from "./statistics-helper";
 import {sort} from "mathjs";
 
 function generateReport(listOfNumbers) {
@@ -7,7 +7,7 @@ function generateReport(listOfNumbers) {
     median: getMedian(listOfNumbers),
     mode: getMode(listOfNumbers),
     range: getRange(listOfNumbers),
-    standart_deviation: getStandartDeviation(listOfNumbers),
+    standard_deviation: getStandardDeviation(listOfNumbers),
     variance: getVariance(listOfNumbers)
   }
 }

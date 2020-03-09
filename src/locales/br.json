@@ -17,7 +17,7 @@
     "median":  "Mediana",
     "mode": "Moda",
     "range":  "Amplitude",
-    "standart_deviation": "Desvio padrão",
+    "standard_deviation": "Desvio padrão",
     "variance":  "Variância"
   },
   "future": "Sim, eu irei adicionar mais coisas como cálculo de intervalos contínuos e com número de classes dinâmico. Você pode me ajudar ",

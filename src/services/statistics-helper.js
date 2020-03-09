@@ -16,7 +16,7 @@ function getRange(listOfNumbers) {
   return _rounded(max(listOfNumbers) - min(listOfNumbers))
 }
 
-function getStandartDeviation(listOfNumbers) {
+function getStandardDeviation(listOfNumbers) {
   return _rounded(std(listOfNumbers))
 }
 function getVariance(listOfNumbers) {
@@ -32,6 +32,6 @@ export {
   getMedian,
   getMode,
   getRange,
-  getStandartDeviation,
+  getStandardDeviation,
   getVariance,
 }
