@@ -21,3 +21,5 @@ yarn-error.log*
 *.sw*
 
 apply.sh
+
+deploy.sh
