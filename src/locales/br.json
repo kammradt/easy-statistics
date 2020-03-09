@@ -1,0 +1,23 @@
+{
+  "title": "Estatística para todos! ✨",
+  "subtitle": {
+    "first": "As vezes é meio demorado (e chato) calcular aquela montueira de coisas para o variância, desvio padrão, média e assim vai, né? \uD83E\uDD14",
+    "second": "É, eu também acho. Mas agora ficou bem mais fácil e você tem todos eles de umas vez só! \uD83E\uDD19\uD83C\uDFFB"
+  },
+  "input": {
+    "label": "Digite seus números separados por vírgula"
+  },
+  "card": {
+    "title": "Resultado \uD83D\uDCCA",
+    "subtitle": "Clique para copiar para a área de transferências \uD83D\uDC46\uD83C\uDFFB"
+  },
+  "report": {
+    "ordered": "Números ordenados",
+    "mean": "Média",
+    "median":  "Mediana",
+    "mode": "Moda",
+    "range":  "Amplitude",
+    "standart_deviation": "Desvio padrão",
+    "variance":  "Variância"
+  }
+}

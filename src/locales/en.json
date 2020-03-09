@@ -1,0 +1,23 @@
+{
+  "title": "Statistics for everyone! ✨",
+  "subtitle": {
+    "first": "Sometimes it takes a while (and is boring) to calculate that pile of things for variance, standard deviation, average and so on, am I right? \uD83E\uDD14",
+    "second": "Yeah, I agree. But now it's much easier and you have them all at once! \uD83E\uDD19\uD83C\uDFFB"
+  },
+  "input": {
+    "label": "Type your numbers separeted by comma"
+  },
+  "card": {
+    "title": "Result \uD83D\uDCCA",
+    "subtitle": "Click to copy values to clipboard \uD83D\uDC46\uD83C\uDFFB"
+  },
+  "report": {
+    "ordered": "Sorted numbers",
+    "mean": "Mean",
+    "median":  "Median",
+    "mode": "Mode",
+    "range":  "Range",
+    "standart_deviation": "Standart Deviation",
+    "variance":  "Variance"
+  }
+}
