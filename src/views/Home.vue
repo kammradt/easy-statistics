@@ -42,6 +42,8 @@
                 </v-col>
 
               </v-row>
+              <span v-text="$t('future')" />
+              <a href='https://github.com/kammradt/easy-statistics' target='_blank' v-text="$t('future_link')" />
             </v-card-text>
           </v-card>
         </v-col>

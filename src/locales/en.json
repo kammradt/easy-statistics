@@ -19,5 +19,8 @@
     "range":  "Range",
     "standart_deviation": "Standart Deviation",
     "variance":  "Variance"
-  }
+  },
+  "future": "Yes, I will add more stuff such as options for non discret intervals and dynamic classes. You can help me ",
+  "future_link": "here"
+
 }
