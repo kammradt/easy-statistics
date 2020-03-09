@@ -8,8 +8,9 @@
 
 > Just a website that tries to make easier getting basic statistics information from a given list of numbers
 
-#### 🏠 [✨  🇺🇸Homepage  ✨](https://statistics.now.sh)
+#### 🏠 [✨ 🇺🇸 Homepage  ✨](https://statistics.now.sh)
 #### 🏠 [✨ 🇧🇷 Página  ✨](https://estatistica.now.sh)
+#### 🏠 [✨ 🇪🇸 Sitio  ✨](http://estadistica.now.sh/)
 
 ## Author
 
