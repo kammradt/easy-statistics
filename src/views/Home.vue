@@ -57,14 +57,9 @@
     data: () => ({
       numbers: '',
       languages: [
-        {
-          emoji: '🇧🇷',
-          lang: 'br'
-        },
-        {
-          emoji: '🇺🇸',
-          lang: 'en'
-        }
+        {emoji: '🇧🇷', lang: 'br'},
+        {emoji: '🇺🇸', lang: 'en'},
+        {emoji: '🇪🇸', lang: 'es'}
       ]
     }),
     created() {
@@ -76,6 +71,7 @@
       },
       setLanguageTo(language) {
         this.$i18n.locale = language
+        document.title = this.$t('title')
       }
     },
     computed: {

@@ -1,0 +1,23 @@
+{
+  "title": "Estadísticas para todos! ✨",
+  "subtitle": {
+    "first": "A veces es muy lento (y aburrido) calcular esa cantidad de cosas para la varianza, la desviación estándar, el promedio, etc., ¿verdad? \uD83E\uDD14",
+    "second": "Sí, yo también lo creo. ¡Pero ahora es mucho más fácil y los tienes todos a la vez! \uD83E\uDD19\uD83C\uDFFB"
+  },
+  "input": {
+    "label": "Ingrese sus números separados por comas"
+  },
+  "card": {
+    "title": "Resultado \uD83D\uDCCA",
+    "subtitle": "Haga clic para copiar al portapapeles \uD83D\uDC46\uD83C\uDFFB"
+  },
+  "report": {
+    "ordered": "Numeros ordenados",
+    "mean": "Media",
+    "median":  "Mediana",
+    "mode": "Moda",
+    "range":  "Amplitud",
+    "standart_deviation": "Desviacion estandar",
+    "variance":  "Varianza"
+  }
+}
