@@ -8,8 +8,16 @@
     "label": "Digite seus números separados por vírgula"
   },
   "card": {
-    "title": "Resultado \uD83D\uDCCA",
-    "subtitle": "Clique para copiar para a área de transferências \uD83D\uDC46\uD83C\uDFFB"
+    "title": "Resumo Estatístico \uD83D\uDCCA",
+    "subtitle": "Clique para copiar para a área de transferências \uD83D\uDC46\uD83C\uDFFB",
+    "frequency": {
+      "title": "Distribuição de Frequência",
+      "subtitle": "O número, a frequência absoluta e a relativa em percentagem \uD83D\uDCC9",
+      "number": "Número",
+      "absolute": "Absoluta",
+      "absolute_description": "repetições",
+      "relative": "Relativa"
+    }
   },
   "report": {
     "ordered": "Números ordenados",
@@ -18,7 +26,8 @@
     "mode": "Moda",
     "range":  "Amplitude",
     "standard_deviation": "Desvio padrão",
-    "variance":  "Variância"
+    "variance":  "Variância",
+    "coefficient_of_variation": "Coeficiente de Variação"
   },
   "future": "Sim, eu irei adicionar mais coisas como cálculo de intervalos contínuos e com número de classes dinâmico. Você pode me ajudar ",
   "future_link": "aqui"

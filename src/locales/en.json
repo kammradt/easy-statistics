@@ -8,8 +8,16 @@
     "label": "Type your numbers separeted by comma"
   },
   "card": {
-    "title": "Result \uD83D\uDCCA",
-    "subtitle": "Click to copy values to clipboard \uD83D\uDC46\uD83C\uDFFB"
+    "title": "Statistical Summary \uD83D\uDCCA",
+    "subtitle": "Click to copy values to clipboard \uD83D\uDC46\uD83C\uDFFB",
+    "frequency": {
+      "title": "Frequency Distribution",
+      "subtitle": "The number, absolute frequency and the relative in percentage \uD83D\uDCC9",
+      "number": "Number",
+      "absolute": "Absolute",
+      "absolute_description": "repetitions",
+      "relative": "Relative"
+    }
   },
   "report": {
     "ordered": "Sorted numbers",
@@ -18,7 +26,8 @@
     "mode": "Mode",
     "range":  "Range",
     "standard_deviation": "Standard Deviation",
-    "variance":  "Variance"
+    "variance":  "Variance",
+    "coefficient_of_variation": "Coefficient of Variation"
   },
   "future": "Yes, I will add more stuff such as options for non discret intervals and dynamic classes. You can help me ",
   "future_link": "here"

@@ -19,8 +19,36 @@ function getRange(listOfNumbers) {
 function getStandardDeviation(listOfNumbers) {
   return _rounded(std(listOfNumbers))
 }
+
 function getVariance(listOfNumbers) {
   return _rounded(variance(listOfNumbers))
+}
+
+function getCoefficientOfVariation(statisticReport) {
+  return _rounded((statisticReport.standard_deviation / statisticReport.mean) * 100)
+}
+
+function getFrequencyDistribution(listOfNumbers) {
+  let frequency_report = {}
+
+  function setAbsoluteFrequency(number) {
+    !frequency_report[number] ?
+        frequency_report[number] = {absolute_frequency: 1} :
+        frequency_report[number].absolute_frequency += 1
+  }
+
+  function setRelativeFrequency(number) {
+    frequency_report[number].relative_frequency = percentOfTotal(frequency_report[number].absolute_frequency, listOfNumbers.length)
+  }
+
+  listOfNumbers.forEach(setAbsoluteFrequency)
+  Object.keys(frequency_report).forEach(setRelativeFrequency)
+
+  return frequency_report
+}
+
+function percentOfTotal(value, total) {
+  return _rounded((value / total) * 100)
 }
 
 function _rounded(number) {
@@ -34,4 +62,6 @@ export {
   getRange,
   getStandardDeviation,
   getVariance,
+  getFrequencyDistribution,
+  getCoefficientOfVariation
 }
