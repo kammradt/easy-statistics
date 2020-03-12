@@ -29,7 +29,7 @@
           />
           <v-card tile>
             <div class="text-center pt-3">
-              <span class="display-1 font-weight-light" v-text="$t('card.title')"/> <br>
+              <span class="display-1 font-weight-light" v-text="'Statistic Report 📊'"/> <br>
               <span class="subtitle-2 grey--text pt-1" v-text="$t('card.subtitle')"/>
             </div>
             <v-card-text>
@@ -43,12 +43,40 @@
                   <v-btn block tile outlined v-text="$t(`report.${operation}`)"/>
                   <v-btn block tile outlined text v-text="result"/>
                 </v-col>
+                <br>
 
+                <v-col cols="12">
+                  <div class="text-center pt-3">
+                    <span class="display-1 font-weight-light" v-text="'Frequency Distribution 📈'"/> <br>
+                    <span class="subtitle-2 grey--text pt-1" v-text="'The number value, absolute frequency and the relative in percentage 📉'"/>
+                  </div>
+                  <v-simple-table>
+                    <template v-slot:default>
+                      <thead>
+                      <tr>
+                        <th class="text-left">Number</th>
+                        <th class="text-left">Absolute</th>
+                        <th class="text-left">Relative</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr v-for="(frequency, number) in frequencyReport" :key="number">
+                        <td>{{ number }}</td>
+                        <td :key="type" v-for="(value, type) in frequency">{{value}}</td>
+                      </tr>
+                      </tbody>
+                    </template>
+                  </v-simple-table>
+                </v-col>
               </v-row>
+              <br>
+
               <span v-text="$t('future')"/>
               <a href='https://github.com/kammradt/easy-statistics' target='_blank' v-text="$t('future_link')"/>
             </v-card-text>
           </v-card>
+
+
         </v-col>
       </v-row>
     </v-container>
@@ -57,7 +85,7 @@
 </template>
 
 <script>
-  import {filter, generateReport, order} from "../services/statistics";
+  import {filter, generateReport, getFrequencyReport, order} from "../services/statistics";
 
   export default {
     name: "Home",
@@ -92,6 +120,9 @@
       },
       report() {
         return generateReport(this.listOfNumbers);
+      },
+      frequencyReport() {
+        return getFrequencyReport(this.listOfNumbers)
       },
       ordered() {
         return order(this.listOfNumbers)
