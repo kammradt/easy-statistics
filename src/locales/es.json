@@ -8,8 +8,15 @@
     "label": "Ingrese sus números separados por comas"
   },
   "card": {
-    "title": "Resultado \uD83D\uDCCA",
-    "subtitle": "Haga clic para copiar al portapapeles \uD83D\uDC46\uD83C\uDFFB"
+    "title": "Resumen estadistico \uD83D\uDCCA",
+    "subtitle": "Haga clic para copiar al portapapeles \uD83D\uDC46\uD83C\uDFFB",
+    "frequency": {
+      "title": "Distribución de frecuencias",
+      "subtitle": "El número, frecuencia absoluta y el relativo en porcentaje \uD83D\uDCC9",
+      "number": "Numero",
+      "absolute": "Absoluto",
+      "relative": "Relativo"
+    }
   },
   "report": {
     "ordered": "Numeros ordenados",
@@ -18,7 +25,8 @@
     "mode": "Moda",
     "range":  "Amplitud",
     "standard_deviation": "Desviacion estandar",
-    "variance":  "Varianza"
+    "variance":  "Varianza",
+    "coefficient_of_variation": "Coeficiente de variación"
   },
   "future": "Sí, agregaré más cosas como opciones para intervalos no discretos y clases dinámicas. Puedes ayudarme ",
   "future_link": "aquí"

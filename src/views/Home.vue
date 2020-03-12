@@ -29,11 +29,11 @@
           />
           <v-card tile>
             <div class="text-center pt-3">
-              <span class="display-1 font-weight-light" v-text="'Statistic Report 📊'"/> <br>
+              <span class="display-1 font-weight-light" v-text="$t('card.title')"/> <br>
               <span class="subtitle-2 grey--text pt-1" v-text="$t('card.subtitle')"/>
             </div>
             <v-card-text>
-              <v-row>
+              <v-row class="pb-3">
                 <v-col @click="copy(ordered)" cols="12">
                   <v-btn block tile outlined v-text="$t(`report.ordered`)"/>
                   <v-card @click="({})" v-text="ordered" outlined tile class="text-wrap text-center"/>
@@ -43,33 +43,31 @@
                   <v-btn block tile outlined v-text="$t(`report.${operation}`)"/>
                   <v-btn block tile outlined text v-text="result"/>
                 </v-col>
-                <br>
 
-                <v-col cols="12">
-                  <div class="text-center pt-3">
-                    <span class="display-1 font-weight-light" v-text="'Frequency Distribution 📈'"/> <br>
-                    <span class="subtitle-2 grey--text pt-1" v-text="'The number value, absolute frequency and the relative in percentage 📉'"/>
+                <v-col cols="12" class="mt-3">
+                  <div class="text-center pt-3 pb-3">
+                    <span class="display-1 font-weight-light" v-text="$t('card.frequency.title')"/> <br>
+                    <span class="subtitle-2 grey--text pt-1" v-text="$t('card.frequency.subtitle')" />
                   </div>
                   <v-simple-table>
                     <template v-slot:default>
                       <thead>
                       <tr>
-                        <th class="text-left">Number</th>
-                        <th class="text-left">Absolute</th>
-                        <th class="text-left">Relative</th>
+                        <th class="text-left" v-text="$t('card.frequency.number')" />
+                        <th class="text-left" v-text="$t('card.frequency.absolute')" />
+                        <th class="text-left" v-text="$t('card.frequency.relative')" />
                       </tr>
                       </thead>
                       <tbody>
                       <tr v-for="(frequency, number) in frequencyReport" :key="number">
-                        <td>{{ number }}</td>
-                        <td :key="type" v-for="(value, type) in frequency">{{value}}</td>
+                        <td v-text="number">
+                        <td :key="type" v-for="(value, type) in frequency" v-text="value" @click="copy(value)"/>
                       </tr>
                       </tbody>
                     </template>
                   </v-simple-table>
                 </v-col>
               </v-row>
-              <br>
 
               <span v-text="$t('future')"/>
               <a href='https://github.com/kammradt/easy-statistics' target='_blank' v-text="$t('future_link')"/>
