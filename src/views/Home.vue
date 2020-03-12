@@ -61,7 +61,8 @@
                       <tbody>
                       <tr v-for="(frequency, number) in frequencyReport" :key="number">
                         <td v-text="number">
-                        <td :key="type" v-for="(value, type) in frequency" v-text="value" @click="copy(value)"/>
+                        <td :key="type" v-for="(value, type) in frequency"
+                           v-text="getFormattedFrequency(value, type)" @click="copy(value)" />
                       </tr>
                       </tbody>
                     </template>
@@ -110,6 +111,13 @@
       onErase() {
         this.numbers = '1, 2, 3'
         setTimeout(() => this.numbers = '', 50)
+      },
+      getFormattedFrequency(value, type) {
+        let formats = {
+          relative_frequency: '%',
+          absolute_frequency:  this.$t('card.frequency.absolute_description')
+        }
+        return `${value} ${formats[type]}`
       }
     },
     computed: {
