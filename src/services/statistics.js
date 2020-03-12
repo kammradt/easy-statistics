@@ -1,8 +1,8 @@
-import {getMean, getMedian, getMode, getRange, getStandardDeviation, getVariance,} from "./statistics-helper";
+import {getMean, getMedian, getMode, getRange, getStandardDeviation, getVariance, getFrequencyDistribution, getCoefficientOfVariation} from "./statistics-helper";
 import {sort} from "mathjs";
 
 function generateReport(listOfNumbers) {
-  return {
+  let report = {
     mean: getMean(listOfNumbers),
     median: getMedian(listOfNumbers),
     mode: getMode(listOfNumbers),
@@ -10,6 +10,12 @@ function generateReport(listOfNumbers) {
     standard_deviation: getStandardDeviation(listOfNumbers),
     variance: getVariance(listOfNumbers)
   }
+  report.coefficient_of_variation = getCoefficientOfVariation(report)
+  return report
+}
+
+function getFrequencyReport(listOfNumbers) {
+  return getFrequencyDistribution(listOfNumbers)
 }
 
 function filter(listOfNumbers) {
@@ -33,5 +39,6 @@ function order(listofNumbers) {
 export {
   generateReport,
   filter,
-  order
+  order,
+  getFrequencyReport
 }
