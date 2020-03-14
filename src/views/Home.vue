@@ -1,21 +1,6 @@
 <template>
   <div>
-    <v-toolbar color="#F6F6F6">
-      <v-toolbar-title class="font-weight-light" v-text="$t('title')"/>
-      <v-spacer/>
-      <v-speed-dial direction="bottom" absolute right>
-        <template v-slot:activator>
-          <v-btn icon large>
-            <v-icon v-text="'mdi-earth'"/>
-          </v-btn>
-        </template>
-        <v-btn v-for="language in languages" :key="language.lang" v-text="language.emoji"
-               small rounded class="title"  @click="setLanguageTo(language.lang)"/>
-        <v-btn small rounded class="title" link target="_blank" href="https://github.com/kammradt/easy-statistics">
-          <v-icon v-text="'mdi-xml'"/>
-        </v-btn>
-      </v-speed-dial>
-    </v-toolbar>
+    <Toolbar />
     <v-container grid-list-sm>
       <v-row justify="center">
         <v-col cols="12" sm="10" md="6">
