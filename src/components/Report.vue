@@ -79,9 +79,10 @@
         navigator.clipboard.writeText(value)
       },
       getFormattedFrequency(value, type) {
+        let quantity = value > 1 ? 'plural' : 'singular'
         let formats = {
           relative_frequency: '%',
-          absolute_frequency: this.$t('card.frequency.absolute_description')
+          absolute_frequency: this.$t(`card.frequency.absolute_description.${quantity}`)
         }
         return `${value} ${formats[type]}`
       },

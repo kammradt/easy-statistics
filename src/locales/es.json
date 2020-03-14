@@ -15,7 +15,10 @@
       "subtitle": "El número, frecuencia absoluta y el relativo en porcentaje \uD83D\uDCC9",
       "number": "Numero",
       "absolute": "Absoluto",
-      "absolute_description": "repeticiones",
+      "absolute_description": {
+        "singular": "repetición",
+        "plural": "repeticiones"
+      },
       "relative": "Relativo"
     }
   },

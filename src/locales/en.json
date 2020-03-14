@@ -15,7 +15,10 @@
       "subtitle": "The number, absolute frequency and the relative in percentage \uD83D\uDCC9",
       "number": "Number",
       "absolute": "Absolute",
-      "absolute_description": "repetitions",
+      "absolute_description": {
+        "singular": "repetition",
+        "plural": "repetitions"
+      },
       "relative": "Relative"
     }
   },
