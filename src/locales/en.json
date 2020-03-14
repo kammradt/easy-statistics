@@ -13,7 +13,11 @@
     "frequency": {
       "title": "Frequency Distribution",
       "subtitle": "The number, absolute frequency and the relative in percentage \uD83D\uDCC9",
+      "switch_interval": "Use continuous interval",
+      "range_rule": "Includes the number on the left and excludes the number on the right",
+      "range": "Interval",
       "number": "Number",
+      "numbers": "Numbers",
       "absolute": "Absolute",
       "absolute_description": {
         "singular": "repetition",
