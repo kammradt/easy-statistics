@@ -28,7 +28,8 @@
               <span class="display-1 font-weight-light" v-text="$t('card.frequency.title')"/> <br>
               <span class="subtitle-2 grey--text pt-1" v-text="$t('card.frequency.subtitle')"/>
             </div>
-            <v-simple-table>
+            <v-switch :label="$t('card.frequency.switch_interval')" inset flat v-model="useContinuousInterval" />
+            <v-simple-table v-if="!useContinuousInterval">
               <template v-slot:default>
                 <thead>
                 <tr>
@@ -67,7 +68,8 @@
       CardFooter
     },
     data: () => ({
-      numbers: '1, 2, 3'
+      numbers: '',
+      useContinuousInterval: false
     }),
     created() {
       this.numbers = '10, 20, 50, 30, 30, 30'
@@ -81,20 +83,23 @@
         let quantity = value > 1 ? 'plural' : 'singular'
         let formats = {
           relative_frequency: '%',
-          absolute_frequency: this.$t(`card.frequency.absolute_description.${quantity}`)
+          absolute_frequency: this.$t(`card.frequency.absolute_description.${quantity}`),
+          numbers: ''
         }
         return `${value} ${formats[type]}`
       },
     },
     computed: {
       listOfNumbers() {
-        return filter(this.numbers)
+        return this.numbers !== ''
+            ? filter(this.numbers)
+            : [1, 2, 3]
       },
       report() {
         return generateReport(this.listOfNumbers);
       },
       frequencyReport() {
-        return getFrequencyReport(this.listOfNumbers)
+        return getFrequencyReport(this.listOfNumbers, this.useContinuousInterval)
       },
       ordered() {
         return order(this.listOfNumbers)

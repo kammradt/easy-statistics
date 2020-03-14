@@ -23,8 +23,8 @@ function generateReport(listOfNumbers) {
   return report
 }
 
-function getFrequencyReport(listOfNumbers) {
-  return getFrequencyDistribution(listOfNumbers)
+function getFrequencyReport(listOfNumbers, useContinuousInterval) {
+  return getFrequencyDistribution(listOfNumbers, useContinuousInterval)
 }
 
 function filter(listOfNumbers) {
