@@ -1,5 +1,5 @@
-import {getMean, getMedian, getMode, getRange, getStandardDeviation, getVariance, getFrequencyDistribution, getCoefficientOfVariation} from "./statistics-helper";
-import {sort} from "mathjs";
+import { getMean, getMedian, getMode, getRange, getStandardDeviation, getVariance, getFrequencyDistribution, getCoefficientOfVariation } from "./statistics-helper";
+import { sort } from "mathjs";
 
 function generateReport(listOfNumbers) {
   let report = {
@@ -23,13 +23,13 @@ function filter(listOfNumbers) {
   let toNumber = n => +n;
   let isNumeric = n => !Number.isNaN(n);
 
-  return listOfNumbers.length !== 0 ?
-      listOfNumbers
-          .split(",")
-          .filter(removeSpaces)
-          .map(toNumber)
-          .filter(isNumeric)
-      : []
+  return listOfNumbers.length !== 0
+    ? listOfNumbers
+      .split(",")
+      .filter(removeSpaces)
+      .map(toNumber)
+      .filter(isNumeric)
+    : []
 }
 
 function order(listofNumbers) {
