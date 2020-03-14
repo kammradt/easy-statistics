@@ -3,8 +3,7 @@
     <v-text-field
             class="my-6 font-weight-light title"
             :label="$t('input.label')"
-            v-model="numbers" clearable
-            @click:clear="onErase"
+            v-model="numbers"
     />
 
     <v-card tile>
@@ -85,10 +84,6 @@
           absolute_frequency: this.$t(`card.frequency.absolute_description.${quantity}`)
         }
         return `${value} ${formats[type]}`
-      },
-      onErase() {
-        this.numbers = '1, 2, 3'
-        setTimeout(() => this.numbers = '', 50)
       },
     },
     computed: {
