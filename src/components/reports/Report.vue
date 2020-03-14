@@ -1,8 +1,8 @@
 <template>
   <div>
     <v-text-field
-            class="my-6 font-weight-light title"
             :label="$t('input.label')"
+            class="my-6 font-weight-light title"
             v-model="numbers"
     />
 

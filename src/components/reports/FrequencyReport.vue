@@ -4,7 +4,7 @@
       <span class="display-1 font-weight-light" v-text="$t('card.frequency.title')"/> <br>
       <span class="subtitle-2 grey--text pt-1" v-text="$t('card.frequency.subtitle')"/>
     </div>
-    <v-switch :label="$t('card.frequency.switch_interval')" inset flat v-model="useContinuousInterval"/>
+    <v-switch :label="$t('card.frequency.switch_interval')" flat inset v-model="useContinuousInterval"/>
 
     <v-simple-table v-if="useContinuousInterval">
       <template v-slot:default>
@@ -12,9 +12,9 @@
         <tr>
           <v-tooltip bottom>
             <template v-slot:activator="{ on }">
-              <th v-on="on" class="text-left" v-text="$t('card.frequency.range')"/>
+              <th class="text-left" v-on="on" v-text="$t('card.frequency.range')"/>
             </template>
-            <span v-text="$t('card.frequency.range_rule')" />
+            <span v-text="$t('card.frequency.range_rule')"/>
           </v-tooltip>
           <th class="text-left" v-text="$t('card.frequency.numbers')"/>
           <th class="text-left" v-text="$t('card.frequency.absolute')"/>
@@ -22,10 +22,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(values, range) in frequencyReport" :key="range">
+        <tr :key="range" v-for="(values, range) in frequencyReport">
           <td v-text="range"/>
-          <td :key="type" v-for="(value, type) in values"
-              v-text="getFormattedFrequency(value, type)" @click="copy(value)"/>
+          <td :key="type" @click="copy(value)"
+              v-for="(value, type) in values" v-text="getFormattedFrequency(value, type)"/>
         </tr>
         </tbody>
       </template>
@@ -40,10 +40,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="(frequency, number) in frequencyReport" :key="number">
+        <tr :key="number" v-for="(frequency, number) in frequencyReport">
           <td v-text="number">
-          <td :key="type" v-for="(value, type) in frequency"
-              v-text="getFormattedFrequency(value, type)" @click="copy(value)"/>
+          <td :key="type" @click="copy(value)"
+              v-for="(value, type) in frequency" v-text="getFormattedFrequency(value, type)"/>
         </tr>
         </tbody>
       </template>

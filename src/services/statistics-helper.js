@@ -75,7 +75,7 @@ function _addPercentOfEachFrequency(frequency_report, listOfNumbers) {
 
 function _getFrequencyDistributionForContinuousNumbers(listOfNumbers) {
   const numberOfClasses = Math.round(_getNumberOfClasses(listOfNumbers))
-  const classLength =  getRange(listOfNumbers) / (numberOfClasses - 1);
+  const classLength = getRange(listOfNumbers) / (numberOfClasses - 1);
   const firstClassValue = min(listOfNumbers) - (classLength / 2)
 
   let frequency_report = _getFrequencyReportTemplate(numberOfClasses, firstClassValue, classLength);

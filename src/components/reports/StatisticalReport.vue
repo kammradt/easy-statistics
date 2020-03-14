@@ -1,12 +1,12 @@
 <template>
   <v-row>
     <v-col @click="copy(ordered)" cols="12">
-      <v-btn block tile outlined v-text="$t(`report.ordered`)"/>
-      <v-card @click="({})" v-text="ordered" outlined tile class="text-wrap text-center"/>
+      <v-btn block outlined tile v-text="$t(`report.ordered`)"/>
+      <v-card @click="({})" class="text-wrap text-center" outlined tile v-text="ordered"/>
     </v-col>
-    <v-col v-for="(result, operation) in report" :key="operation" @click="copy(result)">
-      <v-btn block tile outlined v-text="$t(`report.${operation}`)"/>
-      <v-btn block tile outlined text v-text="result"/>
+    <v-col :key="operation" @click="copy(result)" v-for="(result, operation) in report">
+      <v-btn block outlined tile v-text="$t(`report.${operation}`)"/>
+      <v-btn block outlined text tile v-text="result"/>
     </v-col>
   </v-row>
 </template>

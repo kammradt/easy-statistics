@@ -29,14 +29,13 @@
   "report": {
     "ordered": "Sorted numbers",
     "mean": "Mean",
-    "median":  "Median",
+    "median": "Median",
     "mode": "Mode",
-    "range":  "Range",
+    "range": "Range",
     "standard_deviation": "Standard Deviation",
-    "variance":  "Variance",
+    "variance": "Variance",
     "coefficient_of_variation": "Coefficient of Variation"
   },
   "future": "Do you have any suggestions or want to help with the project? You can help me ",
   "future_link": "here"
-
 }

@@ -29,11 +29,11 @@
   "report": {
     "ordered": "Numeros ordenados",
     "mean": "Media",
-    "median":  "Mediana",
+    "median": "Mediana",
     "mode": "Moda",
-    "range":  "Amplitud",
+    "range": "Amplitud",
     "standard_deviation": "Desviacion estandar",
-    "variance":  "Varianza",
+    "variance": "Varianza",
     "coefficient_of_variation": "Coeficiente de variación"
   },
   "future": "¿Tienes alguna sugerencia o quieres ayudar con el proyecto? Usted puede ayudarme ",
