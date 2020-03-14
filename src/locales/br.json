@@ -13,7 +13,11 @@
     "frequency": {
       "title": "Distribuição de Frequência",
       "subtitle": "O número, a frequência absoluta e a relativa em percentagem \uD83D\uDCC9",
+      "switch_interval": "Usar intrevalo contínuo",
+      "range_rule": "Inclui o número da esquerda e exclui o número da direita",
+      "range": "Intervalo",
       "number": "Número",
+      "numbers": "Números",
       "absolute": "Absoluta",
       "absolute_description": {
         "singular": "repetição",
@@ -25,13 +29,13 @@
   "report": {
     "ordered": "Números ordenados",
     "mean": "Média",
-    "median":  "Mediana",
+    "median": "Mediana",
     "mode": "Moda",
-    "range":  "Amplitude",
+    "range": "Amplitude",
     "standard_deviation": "Desvio padrão",
-    "variance":  "Variância",
+    "variance": "Variância",
     "coefficient_of_variation": "Coeficiente de Variação"
   },
-  "future": "Sim, eu irei adicionar mais coisas como cálculo de intervalos contínuos e com número de classes dinâmico. Você pode me ajudar ",
+  "future": "Tem alguma sugestão ou quer ajudar no projeto? Você pode me ajudar ",
   "future_link": "aqui"
 }

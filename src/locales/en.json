@@ -13,7 +13,11 @@
     "frequency": {
       "title": "Frequency Distribution",
       "subtitle": "The number, absolute frequency and the relative in percentage \uD83D\uDCC9",
+      "switch_interval": "Use continuous interval",
+      "range_rule": "Includes the number on the left and excludes the number on the right",
+      "range": "Interval",
       "number": "Number",
+      "numbers": "Numbers",
       "absolute": "Absolute",
       "absolute_description": {
         "singular": "repetition",
@@ -25,14 +29,13 @@
   "report": {
     "ordered": "Sorted numbers",
     "mean": "Mean",
-    "median":  "Median",
+    "median": "Median",
     "mode": "Mode",
-    "range":  "Range",
+    "range": "Range",
     "standard_deviation": "Standard Deviation",
-    "variance":  "Variance",
+    "variance": "Variance",
     "coefficient_of_variation": "Coefficient of Variation"
   },
-  "future": "Yes, I will add more stuff such as options for non discret intervals and dynamic classes. You can help me ",
+  "future": "Do you have any suggestions or want to help with the project? You can help me ",
   "future_link": "here"
-
 }

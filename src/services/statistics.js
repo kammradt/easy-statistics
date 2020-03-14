@@ -1,5 +1,14 @@
-import { getMean, getMedian, getMode, getRange, getStandardDeviation, getVariance, getFrequencyDistribution, getCoefficientOfVariation } from "./statistics-helper";
-import { sort } from "mathjs";
+import {
+  getCoefficientOfVariation,
+  getFrequencyDistribution,
+  getMean,
+  getMedian,
+  getMode,
+  getRange,
+  getStandardDeviation,
+  getVariance
+} from "./statistics-helper";
+import {sort} from "mathjs";
 
 function generateReport(listOfNumbers) {
   let report = {
@@ -14,8 +23,8 @@ function generateReport(listOfNumbers) {
   return report
 }
 
-function getFrequencyReport(listOfNumbers) {
-  return getFrequencyDistribution(listOfNumbers)
+function getFrequencyReport(listOfNumbers, useContinuousInterval) {
+  return getFrequencyDistribution(listOfNumbers, useContinuousInterval)
 }
 
 function filter(listOfNumbers) {
@@ -24,12 +33,12 @@ function filter(listOfNumbers) {
   let isNumeric = n => !Number.isNaN(n);
 
   return listOfNumbers.length !== 0
-    ? listOfNumbers
-      .split(",")
-      .filter(removeSpaces)
-      .map(toNumber)
-      .filter(isNumeric)
-    : []
+      ? listOfNumbers
+          .split(",")
+          .filter(removeSpaces)
+          .map(toNumber)
+          .filter(isNumeric)
+      : []
 }
 
 function order(listofNumbers) {
