@@ -1,23 +1,5 @@
 <template>
-  <v-simple-table v-if="!useContinuousInterval">
-    <template v-slot:default>
-      <thead>
-      <tr>
-        <th class="text-left" v-text="$t('card.frequency.number')"/>
-        <th class="text-left" v-text="$t('card.frequency.absolute')"/>
-        <th class="text-left" v-text="$t('card.frequency.relative')"/>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="(frequency, number) in frequencyReport" :key="number">
-        <td v-text="number">
-        <td :key="type" v-for="(value, type) in frequency"
-            v-text="getFormattedFrequency(value, type)" @click="copy(value)"/>
-      </tr>
-      </tbody>
-    </template>
-  </v-simple-table>
-  <v-simple-table v-else>
+  <v-simple-table v-if="useContinuousInterval">
     <template v-slot:default>
       <thead>
       <tr>
@@ -36,6 +18,24 @@
       <tr v-for="(values, range) in frequencyReport" :key="range">
         <td v-text="range"/>
         <td :key="type" v-for="(value, type) in values"
+            v-text="getFormattedFrequency(value, type)" @click="copy(value)"/>
+      </tr>
+      </tbody>
+    </template>
+  </v-simple-table>
+  <v-simple-table v-else>
+    <template v-slot:default>
+      <thead>
+      <tr>
+        <th class="text-left" v-text="$t('card.frequency.number')"/>
+        <th class="text-left" v-text="$t('card.frequency.absolute')"/>
+        <th class="text-left" v-text="$t('card.frequency.relative')"/>
+      </tr>
+      </thead>
+      <tbody>
+      <tr v-for="(frequency, number) in frequencyReport" :key="number">
+        <td v-text="number">
+        <td :key="type" v-for="(value, type) in frequency"
             v-text="getFormattedFrequency(value, type)" @click="copy(value)"/>
       </tr>
       </tbody>
