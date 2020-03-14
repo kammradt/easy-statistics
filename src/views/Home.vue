@@ -13,9 +13,9 @@
 </template>
 
 <script>
-  import Toolbar from "../components/Toolbar";
-  import Report from "../components/Report";
-  import IntroductionText from "../components/IntroductionText";
+  import Toolbar from "../components/commom/Toolbar";
+  import Report from "../components/reports/Report";
+  import IntroductionText from "../components/reports/IntroductionText";
 
   export default {
     name: "Home",

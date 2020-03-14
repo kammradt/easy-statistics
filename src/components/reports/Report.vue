@@ -13,28 +13,13 @@
       </div>
       <v-card-text>
         <v-row class="pb-3">
-          <v-col @click="copy(ordered)" cols="12">
-            <v-btn block tile outlined v-text="$t(`report.ordered`)"/>
-            <v-card @click="({})" v-text="ordered" outlined tile class="text-wrap text-center"/>
-          </v-col>
-
-          <v-col v-for="(result, operation) in report" :key="operation" @click="copy(result)">
-            <v-btn block tile outlined v-text="$t(`report.${operation}`)"/>
-            <v-btn block tile outlined text v-text="result"/>
-          </v-col>
-
-          <v-col cols="12" class="mt-3">
-            <div class="text-center pt-3 pb-3">
-              <span class="display-1 font-weight-light" v-text="$t('card.frequency.title')"/> <br>
-              <span class="subtitle-2 grey--text pt-1" v-text="$t('card.frequency.subtitle')"/>
-            </div>
-
+          <StatisticalReport :list-of-numbers="listOfNumbers"/>
+          <v-col class="mt-3">
             <FrequencyReport :list-of-numbers="listOfNumbers"/>
           </v-col>
         </v-row>
 
         <CardFooter/>
-
       </v-card-text>
     </v-card>
 
@@ -42,13 +27,15 @@
 </template>
 
 <script>
-  import {filter, generateReport, order} from "../services/statistics";
-  import CardFooter from "./CardFooter";
+  import {filter} from "../../services/statistics";
+  import CardFooter from "../commom/CardFooter";
+  import StatisticalReport from "./StatisticalReport";
   import FrequencyReport from "./FrequencyReport";
 
   export default {
     name: "Report",
     components: {
+      StatisticalReport,
       FrequencyReport,
       CardFooter
     },
@@ -69,12 +56,6 @@
         return this.numbers !== ''
             ? filter(this.numbers)
             : [1, 2, 3]
-      },
-      report() {
-        return generateReport(this.listOfNumbers);
-      },
-      ordered() {
-        return order(this.listOfNumbers)
       }
     }
   }

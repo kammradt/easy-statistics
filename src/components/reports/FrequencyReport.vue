@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div class="text-center pt-3 pb-3">
+      <span class="display-1 font-weight-light" v-text="$t('card.frequency.title')"/> <br>
+      <span class="subtitle-2 grey--text pt-1" v-text="$t('card.frequency.subtitle')"/>
+    </div>
     <v-switch :label="$t('card.frequency.switch_interval')" inset flat v-model="useContinuousInterval"/>
 
     <v-simple-table v-if="useContinuousInterval">
@@ -49,16 +53,16 @@
 </template>
 
 <script>
-  import {getFrequencyReport} from "../services/statistics";
+  import {getFrequencyReport} from "../../services/statistics";
 
   export default {
     name: "DiscreteReport",
-    data: () => ({
-      useContinuousInterval: false
-    }),
     props: {
       listOfNumbers: Array
     },
+    data: () => ({
+      useContinuousInterval: false
+    }),
     computed: {
       frequencyReport() {
         return getFrequencyReport(this.listOfNumbers, this.useContinuousInterval)
@@ -76,7 +80,7 @@
           numbers: ''
         }
         return `${value} ${formats[type]}`
-      },
+      }
     }
   }
 </script>
