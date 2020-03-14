@@ -28,9 +28,8 @@
               <span class="display-1 font-weight-light" v-text="$t('card.frequency.title')"/> <br>
               <span class="subtitle-2 grey--text pt-1" v-text="$t('card.frequency.subtitle')"/>
             </div>
-            <v-switch :label="$t('card.frequency.switch_interval')" inset flat v-model="useContinuousInterval"/>
 
-            <FrequencyReport :list-of-numbers="listOfNumbers" :use-continuous-interval="useContinuousInterval"/>
+            <FrequencyReport :list-of-numbers="listOfNumbers"/>
           </v-col>
         </v-row>
 
@@ -55,7 +54,6 @@
     },
     data: () => ({
       numbers: '',
-      useContinuousInterval: false
     }),
     created() {
       this.numbers = '10, 20, 50, 30, 30, 30'
