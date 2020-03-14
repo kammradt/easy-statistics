@@ -15,7 +15,7 @@
 <script>
   import Toolbar from "../components/Toolbar";
   import Report from "../components/Report";
-  import IntroductionText from "./IntroductionText";
+  import IntroductionText from "../components/IntroductionText";
 
   export default {
     name: "Home",

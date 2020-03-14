@@ -28,25 +28,9 @@
               <span class="display-1 font-weight-light" v-text="$t('card.frequency.title')"/> <br>
               <span class="subtitle-2 grey--text pt-1" v-text="$t('card.frequency.subtitle')"/>
             </div>
-            <v-switch :label="$t('card.frequency.switch_interval')" inset flat v-model="useContinuousInterval" />
-            <v-simple-table v-if="!useContinuousInterval">
-              <template v-slot:default>
-                <thead>
-                <tr>
-                  <th class="text-left" v-text="$t('card.frequency.number')"/>
-                  <th class="text-left" v-text="$t('card.frequency.absolute')"/>
-                  <th class="text-left" v-text="$t('card.frequency.relative')"/>
-                </tr>
-                </thead>
-                <tbody>
-                <tr v-for="(frequency, number) in frequencyReport" :key="number">
-                  <td v-text="number">
-                  <td :key="type" v-for="(value, type) in frequency"
-                      v-text="getFormattedFrequency(value, type)" @click="copy(value)"/>
-                </tr>
-                </tbody>
-              </template>
-            </v-simple-table>
+            <v-switch :label="$t('card.frequency.switch_interval')" inset flat v-model="useContinuousInterval"/>
+
+            <FrequencyReport :list-of-numbers="listOfNumbers" :use-continuous-interval="useContinuousInterval"/>
           </v-col>
         </v-row>
 
@@ -59,12 +43,14 @@
 </template>
 
 <script>
-  import {filter, generateReport, getFrequencyReport, order} from "../services/statistics";
+  import {filter, generateReport, order} from "../services/statistics";
   import CardFooter from "./CardFooter";
+  import FrequencyReport from "./FrequencyReport";
 
   export default {
     name: "Report",
     components: {
+      FrequencyReport,
       CardFooter
     },
     data: () => ({
@@ -79,15 +65,6 @@
       copy(value) {
         navigator.clipboard.writeText(value)
       },
-      getFormattedFrequency(value, type) {
-        let quantity = value > 1 ? 'plural' : 'singular'
-        let formats = {
-          relative_frequency: '%',
-          absolute_frequency: this.$t(`card.frequency.absolute_description.${quantity}`),
-          numbers: ''
-        }
-        return `${value} ${formats[type]}`
-      },
     },
     computed: {
       listOfNumbers() {
@@ -97,9 +74,6 @@
       },
       report() {
         return generateReport(this.listOfNumbers);
-      },
-      frequencyReport() {
-        return getFrequencyReport(this.listOfNumbers, this.useContinuousInterval)
       },
       ordered() {
         return order(this.listOfNumbers)
