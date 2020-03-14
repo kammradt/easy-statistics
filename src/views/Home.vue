@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Toolbar />
+    <Toolbar/>
     <v-container grid-list-sm>
       <v-row justify="center">
-        <v-col cols="12" sm="10" md="6">
+        <v-col cols="12" md="6" sm="10">
           <IntroductionText/>
-          <Report />
+          <Report/>
         </v-col>
       </v-row>
     </v-container>
@@ -13,9 +13,9 @@
 </template>
 
 <script>
-  import Toolbar from "../components/Toolbar";
-  import Report from "../components/Report";
-  import IntroductionText from "./IntroductionText";
+  import Toolbar from "../components/commom/Toolbar";
+  import Report from "../components/reports/Report";
+  import IntroductionText from "../components/reports/IntroductionText";
 
   export default {
     name: "Home",

@@ -2,15 +2,15 @@
   <v-toolbar color="#F6F6F6">
     <v-toolbar-title class="font-weight-light" v-text="$t('title')"/>
     <v-spacer/>
-    <v-speed-dial direction="bottom" absolute right>
+    <v-speed-dial absolute direction="bottom" right>
       <template v-slot:activator>
         <v-btn icon large>
           <v-icon v-text="'mdi-earth'"/>
         </v-btn>
       </template>
-      <v-btn v-for="language in languages" :key="language.lang" v-text="language.emoji"
-             small rounded class="title" @click="setLanguageTo(language.lang)"/>
-      <v-btn small rounded class="title" link target="_blank" href="https://github.com/kammradt/easy-statistics">
+      <v-btn :key="language.lang" @click="setLanguageTo(language.lang)" class="title"
+             rounded small v-for="language in languages" v-text="language.emoji"/>
+      <v-btn class="title" href="https://github.com/kammradt/easy-statistics" link rounded small target="_blank">
         <v-icon v-text="'mdi-xml'"/>
       </v-btn>
     </v-speed-dial>
